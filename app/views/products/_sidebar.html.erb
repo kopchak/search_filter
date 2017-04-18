@@ -1,0 +1,149 @@
+<p>
+  <%= link_to "Home", products_path %>
+</p>
+
+<span>Search by filter:</span>
+<%= form_tag(filter_products_path, method: "get") do %>
+  <div class="color-block">
+    <p>Colors:</p>
+    <div class="colors-checkboxes">
+      <p>
+        <%= check_box_tag('colors[]', :white, false, class: 'checkbox') %>
+        <%= label_tag(:color, "White") %>
+      </p>
+      <p>
+        <%= check_box_tag('colors[]', :black, false, class: 'checkbox')  %>
+        <%= label_tag(:color, "Black") %>
+      </p>
+      <p>
+        <%= check_box_tag('colors[]', :red, false, class: 'checkbox')  %>
+        <%= label_tag(:color, "Red") %>
+      </p>
+      <p>
+        <%= check_box_tag('colors[]', :blue, false, class: 'checkbox')  %>
+        <%= label_tag(:color, "Blue") %>
+      </p>
+      <p>
+        <%= check_box_tag('colors[]', :green, false, class: 'checkbox')  %>
+        <%= label_tag(:color, "Green") %>
+      </p>
+    </div>
+  </div>
+  <div class="price-block">
+    <p>Price:</p>
+    <div class="price-checkboxes">
+      <p>
+        <%= check_box_tag('price[]', 0..150, false, class: 'checkbox') %>
+        <%= label_tag(:cheap, "Cheap: 0 to 150") %>
+      </p>
+      <p>
+        <%= check_box_tag('price[]', 150..300, false, class: 'checkbox')  %>
+        <%= label_tag(:medium, "Medium: 150 to 300") %>
+      </p>
+      <p>
+        <%= check_box_tag('price[]', 300..500, false, class: 'checkbox')  %>
+        <%= label_tag(:expensive, "Expensive: 300 to 500") %>
+      </p>
+    </div>
+  </div>
+  <div class="material-block">
+    <p>Material:</p>
+    <div class="material-checkboxes">
+      <p>
+        <%= check_box_tag('materials[]', :iron, false, class: 'checkbox') %>
+        <%= label_tag(:iron, "Iron") %>
+      </p>
+      <p>
+        <%= check_box_tag('materials[]', :wood, false, class: 'checkbox')  %>
+        <%= label_tag(:wood, "Wood") %>
+      </p>
+      <p>
+        <%= check_box_tag('materials[]', :glass, false, class: 'checkbox')  %>
+        <%= label_tag(:glass, "Glass") %>
+      </p>
+    </div>
+  </div>
+  <div class="delivery-block">
+    <p>Delivery:</p>
+    <div class="delivery-checkboxes">
+      <p>
+        <%= check_box_tag(:fast_delivery, true, false, class: 'checkbox') %>
+        <%= label_tag(:fast_delivery, "Fast delivery") %>
+      </p>
+    </div>
+  </div>
+  <div class="condition-block">
+    <p>Condition:</p>
+    <div class="condition-checkboxes">
+      <p>
+        <%= check_box_tag(:fragile, true, false, class: 'checkbox') %>
+        <%= label_tag(:fragile, "Fragile") %>
+      </p>
+    </div>
+  </div>
+  <div class="weight-block">
+    <p>Weight:</p>
+    <div class="weight-checkboxes">
+      <p>
+        <%= check_box_tag('weight[]', 0..15, false, class: 'checkbox') %>
+        <%= label_tag(:light, "Light (0-15) kg") %>
+      </p>
+      <p>
+        <%= check_box_tag('weight[]', 15..30, false, class: 'checkbox') %>
+        <%= label_tag(:medium, "Medium (15-30) kg") %>
+      </p>
+      <p>
+        <%= check_box_tag('weight[]', 30..50, false, class: 'checkbox') %>
+        <%= label_tag(:heavy, "Heavy (30-50) kg") %>
+      </p>
+    </div>
+  </div>
+  <div class="height-block">
+    <p>Height:</p>
+    <div class="height-checkboxes">
+      <p>
+        <%= check_box_tag('height[]', 0..120, false, class: 'checkbox') %>
+        <%= label_tag(:low, "Low (0 - 120) cm") %>
+      </p>
+      <p>
+        <%= check_box_tag('height[]', 120..150, false, class: 'checkbox') %>
+        <%= label_tag(:medium, "Medium (120 - 150) cm") %>
+      </p>
+      <p>
+        <%= check_box_tag('height[]', 150..200, false, class: 'checkbox') %>
+        <%= label_tag(:hight, "Hight (150 - 200) cm") %>
+      </p>
+    </div>
+  </div>
+  <div class="width-block">
+    <p>Width:</p>
+    <div class="width-checkboxes">
+      <p>
+        <%= check_box_tag('width[]', 0..20, false, class: 'checkbox') %>
+        <%= label_tag(:narrow, "Narrow (0 - 20) cm") %>
+      </p>
+      <p>
+        <%= check_box_tag('width[]', 20..40, false, class: 'checkbox') %>
+        <%= label_tag(:medium, "Medium (20 - 40) cm") %>
+      </p>
+      <p>
+        <%= check_box_tag('width[]', 40..50, false, class: 'checkbox') %>
+        <%= label_tag(:wide, "Wide (40 - 50) cm") %>
+      </p>
+    </div>
+  </div>
+  <div class="discount-block">
+    <p>Discount:</p>
+    <div class="discount-checkboxes">
+      <p>
+        <%= check_box_tag('discount[]', 0..10, false, class: 'checkbox') %>
+        <%= label_tag(:little, "Discount (0 - 10)%") %>
+      </p>
+      <p>
+        <%= check_box_tag('discount[]', 10..20, false, class: 'checkbox') %>
+        <%= label_tag(:medium, "Discount (10 - 20)%") %>
+      </p>
+    </div>
+  </div>
+  <%= submit_tag("Search") %>
+<% end %>
