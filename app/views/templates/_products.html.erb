@@ -1,0 +1,15 @@
+<% @products.each do |product| %>
+  <div class="product">
+    product id: <%= product.id %>,
+    color:  <%= product.color %>,
+    price:  <%= product.price %>,
+    height: <%= product.height %>,
+    width:  <%= product.width %>,
+    weight: <%= product.weight %>,
+    amount: <%= product.amount %>,
+    discount: <%= product.discount %>,
+    fragile: <%= product.fragile %>,
+    material: <%= product.material %>,
+    fast_delivery: <%= product.fast_delivery %>,
+  </div>
+<% end %>

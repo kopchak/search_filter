@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require react
-//= require react_ujs
-//= require components
+//= require lib/angular.min
+//= require lib/angular-resource.min
+//= require searchFilter
 //= require_tree .

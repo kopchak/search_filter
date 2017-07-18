@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root 'products#index'
+  root 'home#index'
 
-  resources :products, only: :index do
-    get 'filter', on: :collection
+  namespace :api, defaults: { format: :json } do
+    resources :products, only: :index do
+      get 'filter', on: :collection
+    end
   end
-
 end
